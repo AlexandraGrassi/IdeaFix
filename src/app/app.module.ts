@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { IdeaCardComponent } from './idea-card/idea-card.component';
+import { IdeaCardComponent } from './components/idea-card/idea-card.component';
 
 @NgModule({
   declarations: [
