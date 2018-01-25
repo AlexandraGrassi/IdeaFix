@@ -5,22 +5,27 @@ import { HttpModule } from '@angular/http';
 /*import {HttpClientModule} from '@angular/common/http';*/
 
 import { AppComponent } from './app.component';
+import { AuthorizationPageComponent } from './components/authorization-page/authorization-page.component';
+import { FeedPageComponent } from './components/feed-page/feed-page.component';
 import { IdeaCardComponent } from './components/idea-card/idea-card.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
 import { IdeaPageComponent } from './components/idea-page/idea-page.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AuthorizationPageComponent,
     IdeaCardComponent,
-    NavBarComponent,
-    HomePageComponent,
     IdeaPageComponent,
+    FeedPageComponent,
+    NavBarComponent,
     UserPageComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpModule,
