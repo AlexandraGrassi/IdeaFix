@@ -6,7 +6,7 @@ import {FeedPageComponent} from './components/feed-page/feed-page.component';
 
 // TODO: We must create and deploy 'not-found' page.
 const appRoutes: Routes = [
-  {path: '', redirectTo: '/', pathMatch: 'full'},
+  {path: '', redirectTo: '/auth', pathMatch: 'full'},
   {path: 'auth', component: AuthorizationPageComponent},
   {path: 'registration', component: RegistrationPageComponent},
   {path: 'feed', component: FeedPageComponent},

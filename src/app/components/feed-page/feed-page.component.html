@@ -1,11 +1,16 @@
-<!--<app-nav-bar></app-nav-bar>-->
-<div class="ui stackable six column centered grid">
-  <div class="six wide column" *ngFor = "let i of [0,1,2,3,4]">
-    <app-idea-card></app-idea-card>
+<app-nav-bar></app-nav-bar>
+<div class="ui main container">
+  <!--две карточки в ряд-->
+  <div class="ui stackable six column centered grid">
+    <div class="six wide column" *ngFor = "let i of [0,1,2,3,4]">
+      <app-idea-card></app-idea-card>
+    </div>
   </div>
-</div>
-<!--<div class="ui stackable ten column centered grid">
-  <div class="five wide column" *ngFor = "let i of [0,1,2,3,4]">
-    <app-idea-card></app-idea-card>
+
+  <!--три карточки в ряд-->
+<!--  <div class="ui stackable five column centered grid">
+    <div class="five wide column" *ngFor = "let i of [0,1,2,3,4]">
+      <app-idea-card></app-idea-card>
+    </div>
   </div>
 </div>-->

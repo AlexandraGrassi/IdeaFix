@@ -3,7 +3,7 @@ import { Component} from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-root',
+  selector: 'app-authorization-page',
   templateUrl: 'authorization-page.component.html',
   styleUrls: ['authorization-page.component.css']
 
