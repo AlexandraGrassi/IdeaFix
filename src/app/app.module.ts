@@ -14,6 +14,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FavPageComponent } from './components/fav-page/fav-page.component';
+import { FiltersComponent } from './components/filters/filters.component';
+import { NoticesPageComponent } from './components/notices-page/notices-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { AppRoutingModule } from './app-routing.module';
     IdeaPageComponent,
     FeedPageComponent,
     NavBarComponent,
-    UserPageComponent
+    UserPageComponent,
+    FavPageComponent,
+    FiltersComponent,
+    NoticesPageComponent
   ],
   imports: [
     AppRoutingModule,

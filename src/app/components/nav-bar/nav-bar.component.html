@@ -1,22 +1,23 @@
-<div class="ui top fixed stackable small menu" id="menu">
+<div class="ui under-menu fixed stackable small borderless menu" id="menu">
 
   <div class="header item">
     <a routerLink=""><h2>Idea Fix.</h2></a>
   </div>
 
-  <a class="item active">
+  <a class="item" routerLink="/feed">
     <i class="large home icon"></i>Главная
   </a>
-  <a class="item">
+  <a class="item" routerLink="/fav">
     <i class="large idea icon"></i>Избранное
     <!--<img class="ui mini image" src="../img/idea.png">-->
   </a>
-  <a class="item">
+  <a class="item" routerLink="/notices">
     <i class="large alarm outline icon"></i>Уведомления
+    <!--<div class="ui top right attached red label">22</div>-->
   </a>
 
-  <div class="right menu">
-    <div class="item search-item borderless">
+  <div class="right menu borderless">
+    <div class="item search-item">
       <div class="ui search">
         <div class="ui icon input">
             <i class="search icon"></i>
@@ -26,25 +27,27 @@
       </div>
     </div>
 
-    <div class="item borderless">
+    <div class="item">
       <div class="ui primary button">
         <i class="large write icon"></i>Написать идею
       </div>
     </div>
 
-    <div class="ui dropdown item borderless">
+    <div class="ui dropdown item">
       <img class="ui avatar middle aligned image" src="https://freeiconshop.com/wp-content/uploads/edd/person-flat.png">
       <div class="menu">
         <div class="item">Peter Parker</div>
         <div class="divider"></div>
-        <div class="item">Профиль</div>
-        <div class="item">Редактировать профиль</div>
-        <div class="divider"></div>
-        <div class="item">Выйти</div>
+        <a routerLink="/profile" class="item">
+          Профиль
+        </a>
+        <a routerLink="/profile" class="item">
+          Редактировать профиль
+        </a>
+        <a routerLink="" class="item">
+          Выйти
+        </a>
       </div>
     </div>
   </div>
-
-
-
 </div>

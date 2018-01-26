@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-.main.container {
-  padding-top: 100px;
+.under-menu {
+  margin-top: 5em;
+}
+
+.idea-cards {
+  margin-top: 2em !important;
 }
