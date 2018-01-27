@@ -2,7 +2,7 @@ header{
   background-color: #ffffff ;
 }
 main{
-  margin-bottom: 1000px;
+  margin-bottom:0px;
 }
 
 * {
@@ -121,16 +121,29 @@ header img {
   margin: 0 0 0 0px;
 }
 
+/*body{*/
+  /*width: 0px;*/
+  /*margin: 0px 0px 0px 600px;*/
+  /*padding: 0rem;*/
+  /*justify-content: flex-start;*/
+  /*align-items: center;*/
+  /*flex-direction: column;*/
 
-
-main {
-  width: 350px;
-  margin: 100px 0px 0 600px;
-  padding: 2rem;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
+/*}*/
+.slide{
+  margin: 0px 0px 0px 65px;
+  width: 150px;
 }
+
+  main {
+    width: 350px;
+    margin: 0px 0px 0px 600px;
+    padding: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+
 
 .todo-form,
 .todo-list {
