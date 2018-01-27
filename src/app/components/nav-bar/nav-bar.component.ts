@@ -12,19 +12,22 @@ export class NavBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-/*    $('.menu .user')
-      .popup({
-        popup: $('.popup'),
-        inline     : true,
-        hoverable  : true,
-        position   : 'bottom left',
-        on: 'click'
-      })
-    ;*/
-
     $('#menu .dropdown')
       .dropdown({
         on: 'hover'
+      })
+    ;
+
+    $('#menu .my-tab')
+      .on('click', function() {
+        $('#menu .my-tab').removeClass('active');
+        $(this).addClass('active');
+      })
+    ;
+
+    $('#menu .menu .profile-tab')
+      .on('click', function() {
+        $('#menu .my-tab').removeClass('active');
       })
     ;
   }
