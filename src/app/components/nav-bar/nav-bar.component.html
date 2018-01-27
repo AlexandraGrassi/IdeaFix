@@ -1,24 +1,54 @@
-<div class="ui secondary pointing menu">
-  <div class="item">
-    <div class="ui transparent icon input">
-      <input type="text" placeholder="Search...">
-      <i class="search link icon"></i>
-    </div>
-
+<div class="ui top fixed stackable small borderless menu" id="menu">
+  <div class="header item">
+    <a routerLink=""><h2>Idea Fix.</h2></a>
   </div>
 
-  <div class="right menu">
-    <a class="item active">
-      Написать идею
-    </a>
-    <a class="item">
-      Мой профиль
-    </a>
-    <a class="item">
-      Избранное
-    </a>
-    <a class="item">
-      Уведомления
-    </a>
+  <a class="active item my-tab" routerLink="/feed">
+    <i class="large home icon"></i>Главная
+  </a>
+  <a class="item my-tab" routerLink="/fav">
+    <i class="large idea icon"></i>Избранное
+  </a>
+  <a class="item my-tab" routerLink="/notices">
+    <i class="large alarm outline icon"></i>Уведомления
+    <!--<div class="ui top right attached red label">22</div>-->
+  </a>
+
+  <div class="right menu borderless">
+    <div class="item search-item">
+      <div class="ui search">
+        <div class="ui icon input">
+            <i class="search icon"></i>
+            <input class="prompt" type="text" placeholder="Поиск в Idea Fix">
+        </div>
+        <div class="results"></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="ui primary button">
+        <i class="large write icon"></i>Написать идею
+      </div>
+    </div>
+
+    <div class="ui dropdown item">
+      <img class="ui avatar middle aligned image" src="https://freeiconshop.com/wp-content/uploads/edd/person-flat.png">
+      <div class="menu">
+        <div class="header item">
+          <h3>Peter Parker</h3>
+        </div>
+        <div class="divider"></div>
+        <a routerLink="/profile" class="item profile-tab">
+          Профиль
+        </a>
+        <a routerLink="/profile" class="item profile-tab">
+          Редактировать профиль
+        </a>
+        <div class="divider"></div>
+        <a routerLink="" class="item">
+          Выйти
+        </a>
+      </div>
+    </div>
   </div>
 </div>
