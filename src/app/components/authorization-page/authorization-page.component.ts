@@ -1,4 +1,7 @@
 import { Component} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+
 
 
 @Component({
@@ -10,5 +13,21 @@ import { Component} from '@angular/core';
 })
 
 export class AuthorizationPageComponent {
-  title = 'IdeaFix';
+  rForm: FormGroup;
+  post: any;
+  login = '';
+  password = '';
+
+  constructor(private fb: FormBuilder, private router: Router ) {
+    this.rForm = fb.group({
+      'login': [null, Validators.required],
+      'password': [null, Validators.required]
+    });
+  }
+  authorization(post) {
+    this.login = post.login;
+    this.password = post.password;
+
+    this.router.navigate(['/feed']);
+  }
 }
