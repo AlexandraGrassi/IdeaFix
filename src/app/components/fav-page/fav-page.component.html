@@ -1,0 +1,12 @@
+<div class="ui main container under-menu">
+  <h1 class="ui center aligned header">
+    Ламповые идеи
+  </h1>
+
+  <!--две карточки в ряд-->
+  <div class="ui stackable six column centered grid idea-cards">
+    <div class="six wide column" *ngFor = "let i of [0,1,2]">
+      <app-idea-card></app-idea-card>
+    </div>
+  </div>
+</div>
