@@ -1,4 +1,5 @@
 import {ShortUser} from './shortUser.model';
+import {Idea} from './idea.model';
 
 export class User extends ShortUser {
   private _age: number;
@@ -6,21 +7,24 @@ export class User extends ShortUser {
   private _city: string;
   private _country: string;
   private _about: string;
+  private _setOfFavoriteIdeas: Set<Idea>;
   private _role: {
     id: number,
     name: string
   };
 
-  constructor(id: number, name: string, nickname: string, pic: string, isBanned: boolean, age: number, email: string, city: string, country: string, about: string, role: { id: number; name: string }) {
+  constructor(id: number, name: string, nickname: string, pic: string, isBanned: boolean, age: number,
+              email: string, city: string, country: string, about: string, setOfFavoriteIdeas: Set<Idea>,
+              role: { id: number; name: string }) {
     super(id, name, nickname, pic, isBanned);
     this._age = age;
     this._email = email;
     this._city = city;
     this._country = country;
     this._about = about;
+    this._setOfFavoriteIdeas = setOfFavoriteIdeas;
     this._role = role;
   }
-
 
   get age(): number {
     return this._age;
@@ -60,6 +64,14 @@ export class User extends ShortUser {
 
   set about(value: string) {
     this._about = value;
+  }
+
+  get setOfFavoriteIdeas(): Set<Idea> {
+    return this._setOfFavoriteIdeas;
+  }
+
+  set setOfFavoriteIdeas(value: Set<Idea>) {
+    this._setOfFavoriteIdeas = value;
   }
 
   get role(): { id: number; name: string } {
