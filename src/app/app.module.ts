@@ -17,6 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FavPageComponent } from './components/fav-page/fav-page.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { NoticesPageComponent } from './components/notices-page/notices-page.component';
+import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
+import { FollowUserComponent } from './components/follow-user/follow-user.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NoticesPageComponent } from './components/notices-page/notices-page.com
     UserPageComponent,
     FavPageComponent,
     FiltersComponent,
-    NoticesPageComponent
+    NoticesPageComponent,
+    ProfileTabsComponent,
+    FollowUserComponent
   ],
   imports: [
     AppRoutingModule,

@@ -1,8 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* для того, чтобы навбар не перекрывал верхний контент на странице */
 .under-menu {
   margin-top: 5em;
 }
 
-.idea-cards {
+.max-under-menu {
+  margin-top: 7em;
+}
+
+.cards {
   margin-top: 2em !important;
 }

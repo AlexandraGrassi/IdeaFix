@@ -1,0 +1,46 @@
+<div class="ui centered grid">
+  <div class="ui twelve wide column">
+    <div class="ui top attached tabular menu">
+      <a class="active item" data-tab="ideas">
+        Идеи
+      </a>
+      <a class="item" data-tab="lights">
+        Лайты
+      </a>
+      <!--<a class="item" data-tab="collections">
+        Коллекции
+      </a>-->
+      <a class="item" data-tab="follow">
+        Подписки
+      </a>
+      <a class="item" data-tab="followers">
+        Подписчики
+      </a>
+    </div>
+
+    <div class="ui bottom attached active tab segment" data-tab="ideas">
+      <div class="ui centered grid cards">
+        <div class="ui seven wide column" *ngFor = "let i of [0,1,2,3,4]">
+          <app-idea-card></app-idea-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui bottom attached tab segment" data-tab="lights">
+      <div class="ui centered grid cards">
+        <div class="ui seven wide column" *ngFor = "let i of [0,1,2,3,4]">
+          <app-idea-card></app-idea-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui bottom attached tab segment" data-tab="follow">
+      <app-follow-user *ngFor = "let i of [0,1]"></app-follow-user>
+    </div>
+
+    <div class="ui bottom attached tab segment" data-tab="followers">
+      <app-follow-user *ngFor = "let i of [0,1,2,3,4]"></app-follow-user>
+    </div>
+
+  </div>
+</div>
