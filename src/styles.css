@@ -1,10 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* для того, чтобы навбар не перекрывал верхний контент на странице */
-.under-menu {
-  margin-top: 5em;
-}
-
 .max-under-menu {
   margin-top: 7em;
 }

@@ -19,6 +19,7 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { NoticesPageComponent } from './components/notices-page/notices-page.component';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { FollowUserComponent } from './components/follow-user/follow-user.component';
+import { AuthNavBarComponent } from './components/auth-nav-bar/auth-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FollowUserComponent } from './components/follow-user/follow-user.compon
     FiltersComponent,
     NoticesPageComponent,
     ProfileTabsComponent,
-    FollowUserComponent
+    FollowUserComponent,
+    AuthNavBarComponent
   ],
   imports: [
     AppRoutingModule,
