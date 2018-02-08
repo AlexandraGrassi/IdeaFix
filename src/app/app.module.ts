@@ -17,8 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { FavPageComponent } from './components/fav-page/fav-page.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { NoticesPageComponent } from './components/notices-page/notices-page.component';
-import { RegistrationTabComponent } from './components/registration-tab/registration-tab.component';
-import { RegistratrationStep2Component } from './components/registratration-step2/registratration-step2.component';
+import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
+import { FollowUserComponent } from './components/follow-user/follow-user.component';
+import { AuthNavBarComponent } from './components/auth-nav-bar/auth-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,9 @@ import { RegistratrationStep2Component } from './components/registratration-step
     FavPageComponent,
     FiltersComponent,
     NoticesPageComponent,
-    RegistrationTabComponent,
-    RegistratrationStep2Component
+    ProfileTabsComponent,
+    FollowUserComponent,
+    AuthNavBarComponent
   ],
   imports: [
     AppRoutingModule,

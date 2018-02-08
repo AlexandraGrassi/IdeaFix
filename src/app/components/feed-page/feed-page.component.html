@@ -1,23 +1,13 @@
-<div class="under-menu">
-  <app-filters></app-filters>
-</div>
+<app-filters></app-filters>
 
 <!--две карточки в ряд-->
-<div class="ui stackable six column centered grid idea-cards">
+<div class="ui stackable six column centered grid cards">
   <div class="six wide column" *ngFor = "let i of [0,1,2,3,4]">
-    <app-idea-card>
-      <div class="ui active dimmer">
-        <div class="ui large text loader">Loading</div>
-      </div>
-    </app-idea-card>
+    <app-idea-card></app-idea-card>
   </div>
 </div>
 
-<!--<div class="ui main container">
-
-</div>-->
-
-  <!--три карточки в ряд-->
+<!--три карточки в ряд-->
 <!--  <div class="ui stackable five column centered grid">
     <div class="five wide column" *ngFor = "let i of [0,1,2,3,4]">
       <app-idea-card></app-idea-card>

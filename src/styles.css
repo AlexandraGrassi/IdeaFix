@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-.under-menu {
-  margin-top: 5em;
+
+.max-under-menu {
+  margin-top: 7em;
 }
 
-.idea-cards {
+.cards {
   margin-top: 2em !important;
 }
