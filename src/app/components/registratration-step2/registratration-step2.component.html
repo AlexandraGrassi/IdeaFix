@@ -1,0 +1,62 @@
+<main>
+  <div class="ui header">Register</div>
+
+
+  <form [formGroup]="Step2FormRegistre" (ngSubmit)="authorization(Step2FormRegistre.value)" class="ui form">
+    <div class=" ui form-container">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" formControlName="name" name="name " id="name" class="ui form-control"
+               placeholder="Name"/>
+        <!--<span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"></span>-->
+      </div>
+      <div class="field">
+        <label>Surname</label>
+        <input type="text" formControlName="surname" name="surname " id="surname" class="ui form-control"
+               placeholder="surname"/>
+        <!--<span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"></span>-->
+      </div>
+      <div class="field">
+        <label>Date of birth</label>
+        <input type="date" formControlName="dateOfBirth" name="dateOfBirth " id="dateOfBirth" class="form-control"
+               placeholder="Date of birth"/>
+        <!--<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>-->
+      </div>
+        <div class="field">
+          <label>Country</label>
+      <select class="ui search dropdown">
+        <option value="">Select Country</option>
+        <option >Armenia</option>
+        <option >Australia</option>
+        <option >France</option>
+        <option >Russia</option>
+        <option >Uganda</option>
+        <option >United States</option>
+        <option >Ukraine</option>
+      </select>
+        </div>
+      <div class="field">
+
+        <label>City</label>
+        <input type="text" formControlName="city" name="city " id="city" class="form-control"
+               placeholder="City"/>
+        <!--<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>-->
+      </div>
+      <div class="field">
+        <label>About</label>
+        <input type="text" formControlName="about" name="about " id="about" class="form-control"
+               placeholder="About"/>
+        <!--<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>-->
+      </div>
+      <button class="ui black button" type="submit" [disabled]="!Step2FormRegistre.valid">Continue</button>
+    </div>
+  </form>
+
+  <div class="ui tab" data-tab="summary">
+    Other contt
+  </div>
+
+  <script>
+    $('.top.menu .item').tab();
+  </script>
+</main>

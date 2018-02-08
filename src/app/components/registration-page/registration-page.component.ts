@@ -35,7 +35,7 @@ export class RegistrationPageComponent {
     this.email = post.email;
     this.password = post.password;
     this.confirmPassword = post.confirmPassword;
-    this.router.navigate(['/feed']);
+    this.router.navigate(['/registration2']);
   }
 }
 
