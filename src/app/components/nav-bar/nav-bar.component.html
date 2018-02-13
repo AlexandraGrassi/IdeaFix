@@ -1,54 +1,92 @@
-<div class="ui top fixed stackable small borderless menu" id="menu">
-  <div class="header item">
-    <a routerLink=""><h2>Idea Fix.</h2></a>
+<div class="ui grid">
+  <div class="computer only row">
+    <div class="ui top fixed small borderless menu" id="menu">
+      <div class="header item">
+        <a routerLink="/auth" class="main-name"><h2>Idea Fix.</h2></a>
+      </div>
+
+      <a class="active item my-tab" routerLink="/feed">
+        <i class="large home icon"></i>Feed
+      </a>
+      <a class="item my-tab" routerLink="/fav">
+        <i class="large idea icon"></i>Favorites
+      </a>
+      <!--<a class="item my-tab" routerLink="/notices">
+        <i class="large alarm outline icon"></i>Уведомления
+        &lt;!&ndash;<div class="ui top right attached red label">22</div>&ndash;&gt;
+      </a>-->
+
+      <div class="right menu borderless">
+        <div class="item search-item">
+          <div class="ui search">
+            <div class="ui icon input">
+              <i class="search icon"></i>
+              <input class="prompt" type="text" placeholder="Search in Idea Fix">
+            </div>
+            <div class="results"></div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="ui violet button">
+            <i class="write icon"></i><span>Write idea</span>
+          </div>
+        </div>
+
+        <div class="ui dropdown item">
+          <img class="ui avatar middle aligned image" src="https://freeiconshop.com/wp-content/uploads/edd/person-flat.png">
+          <div class="menu">
+            <div class="header item">
+              <h3>Peter Parker</h3>
+            </div>
+            <div class="divider"></div>
+            <a routerLink="/profile" class="item profile-tab">
+              Profile
+            </a>
+            <a routerLink="/profile" class="item profile-tab">
+              Edit profile
+            </a>
+            <div class="divider"></div>
+            <a routerLink="" class="item">
+              Log out
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <a class="active item my-tab" routerLink="/feed">
-    <i class="large home icon"></i>Главная
-  </a>
-  <a class="item my-tab" routerLink="/fav">
-    <i class="large idea icon"></i>Избранное
-  </a>
-  <!--<a class="item my-tab" routerLink="/notices">
-    <i class="large alarm outline icon"></i>Уведомления
-    &lt;!&ndash;<div class="ui top right attached red label">22</div>&ndash;&gt;
-  </a>-->
-
-  <div class="right menu borderless">
-    <div class="item search-item">
-      <div class="ui search">
-        <div class="ui icon input">
+  <div class="tablet mobile only narrow row">
+    <div class="ui top fixed navbar borderless menu">
+      <div class="header item">
+        <a routerLink="/feed" class="main-name"><h2>Idea Fix.</h2></a>
+      </div>
+      <div class="right menu open">
+        <a href="" class="menu item">
+          <i class="sidebar big icon"></i>
+        </a>
+      </div>
+    </div>
+    <div class="ui vertical navbar top fixed borderless menu">
+      <div class="item search-item">
+        <div class="ui search">
+          <div class="ui icon input">
             <i class="search icon"></i>
-            <input class="prompt" type="text" placeholder="Поиск в Idea Fix">
+            <input class="prompt" type="text" placeholder="Search in Idea Fix">
+          </div>
+          <div class="results"></div>
         </div>
-        <div class="results"></div>
       </div>
-    </div>
 
-    <div class="item">
-      <div class="ui primary button">
-        <i class="large write icon"></i>Написать идею
-      </div>
-    </div>
+      <a routerLink="/feed" class="active item">Home</a>
+      <a routerLink="/fav" class="item">Favorites</a>
+      <a href="" class="item">Write idea</a>
 
-    <div class="ui dropdown item">
-      <img class="ui avatar middle aligned image" src="https://freeiconshop.com/wp-content/uploads/edd/person-flat.png">
-      <div class="menu">
-        <div class="header item">
-          <h3>Peter Parker</h3>
-        </div>
-        <div class="divider"></div>
-        <a routerLink="/profile" class="item profile-tab">
-          Профиль
-        </a>
-        <a routerLink="/profile" class="item profile-tab">
-          Редактировать профиль
-        </a>
-        <div class="divider"></div>
-        <a routerLink="" class="item">
-          Выйти
-        </a>
-      </div>
+      <a routerLink="/profile" class="item">My profile</a>
+
+      <a class="profile item">Edit profile</a>
+      <a class="profile item">Log out</a>
     </div>
   </div>
+
 </div>

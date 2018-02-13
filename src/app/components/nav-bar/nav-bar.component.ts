@@ -30,6 +30,19 @@ export class NavBarComponent implements OnInit {
         $('#menu .my-tab').removeClass('active');
       })
     ;
+
+    $('.right.menu.open').on('click', function(e){
+      e.preventDefault();
+      $('.ui.vertical.menu').toggle();
+    });
+
+    $('.ui.vertical.menu .item')
+      .on('click', function() {
+        $('.ui.vertical.menu .item').removeClass('active');
+        $(this).addClass('active');
+        $('.ui.vertical.menu').toggle();
+      })
+    ;
   }
 
 }
