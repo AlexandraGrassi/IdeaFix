@@ -1,0 +1,43 @@
+<div class="ui modal add-modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Add idea
+  </div>
+  <div class="content">
+    <form class="ui form">
+      <div class="field">
+        <label>Idea Title</label>
+        <input type="text" name="title" placeholder="Title">
+      </div>
+      <div class="field">
+        <label>Text</label>
+        <textarea></textarea>
+      </div>
+
+      <div class="field remote">
+        <div class="ui multiple search selection dropdown">
+          <input type="hidden" required>
+          <i class="dropdown icon"></i>
+          <input type="text" class="search">
+          <div class="default text">Enter tags...</div>
+        </div>
+      </div>
+
+      <br>
+      <div>
+        <label for="file" class="ui icon button">
+          <i class="file icon"></i>
+          Open File
+        </label>
+        <input type="file" id="file" style="display:none">
+      </div>
+
+    </form>
+  </div>
+  <div class="actions">
+    <div class="ui positive icon button">
+      Post idea
+    </div>
+  </div>
+
+</div>

@@ -25,7 +25,7 @@ export class NavBarComponent implements OnInit {
       })
     ;
 
-    $('#menu .menu .profile-tab')
+    $('#menu.menu .profile-tab')
       .on('click', function() {
         $('#menu .my-tab').removeClass('active');
       })
@@ -43,6 +43,16 @@ export class NavBarComponent implements OnInit {
         $('.ui.vertical.menu').toggle();
       })
     ;
+
+    $('#menu #add-idea').on('click', function(){
+      $('.add-modal')
+        .modal('show')
+      ;
+    });
+
+    $('.add-modal').modal({
+      closable: true
+    });
   }
 
 }
