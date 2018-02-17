@@ -7,14 +7,12 @@ import {FavPageComponent} from './components/fav-page/fav-page.component';
 import {UserPageComponent} from './components/user-page/user-page.component';
 import {NoticesPageComponent} from './components/notices-page/notices-page.component';
 import {IdeaPageComponent} from './components/idea-page/idea-page.component';
-import {RegistratrationStep2Component} from './components/registratration-step2/registratration-step2.component';
 
 // TODO: We must create and deploy 'not-found' page.
 const appRoutes: Routes = [
   {path: '', redirectTo: '/auth', pathMatch: 'full'},
   {path: 'auth', component: AuthorizationPageComponent},
   {path: 'registration', component: RegistrationPageComponent},
-  {path: 'registration2', component: RegistratrationStep2Component},
   {path: 'feed', component: FeedPageComponent},
   {path: 'fav', component: FavPageComponent},
   {path: 'profile', component: UserPageComponent},

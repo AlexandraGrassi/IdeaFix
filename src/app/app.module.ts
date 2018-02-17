@@ -7,8 +7,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AuthorizationPageComponent } from './components/authorization-page/authorization-page.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
-import { RegistratrationStep2Component  } from './components/registratration-step2/registratration-step2.component';
-import {RegistrationTabComponent} from './components/registration-tab/registration-tab.component';
 import { FeedPageComponent } from './components/feed-page/feed-page.component';
 import { IdeaCardComponent } from './components/idea-card/idea-card.component';
 import { IdeaPageComponent } from './components/idea-page/idea-page.component';
@@ -29,8 +27,6 @@ import { AddIdeaComponent } from './components/add-idea/add-idea.component';
     AppComponent,
     AuthorizationPageComponent,
     RegistrationPageComponent,
-    RegistratrationStep2Component,
-    RegistrationTabComponent,
     IdeaCardComponent,
     IdeaPageComponent,
     FeedPageComponent,

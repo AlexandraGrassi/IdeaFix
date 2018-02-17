@@ -1,48 +1,93 @@
 <app-auth-nav-bar></app-auth-nav-bar>
-<div class="under-menu">
-  <app-registration-tab></app-registration-tab>
-</div>
-<main>
-  <div class="ui header">Register</div>
 
-
-        <form [formGroup]="rFormRegistre" (ngSubmit)="authorization(rFormRegistre.value)" class="ui form">
-          <div class=" ui form-container">
-            <div class="field">
-              <label>Nickname</label>
-              <input type="text" formControlName="nickname" name="nickname " id="nickname" class="ui form-control"
-                     placeholder="Nickname"/>
-              <!--<span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"></span>-->
-            </div>
-            <div class="field">
-              <label>E-mail</label>
-              <input type="text" formControlName="email" name="email " id="email" class="ui form-control"
-                     placeholder="E-mail"/>
-              <!--<span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"></span>-->
-            </div>
-            <div class="field">
-              <label>Password</label>
-              <input type="text" formControlName="password" name="password " id="password1" class="form-control"
-                     placeholder="Password"/>
-              <!--<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>-->
-            </div>
-            <div class="field">
-              <label>Confirm Password</label>
-              <input type="text" formControlName="confirmPassword" name="confirmPassword" id="confirmPassword"
-                     class="form-control"
-                     placeholder="Password"/>
-              <!--<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>-->
-            </div>
-            <button class="ui black button" type="submit" [disabled]="!rFormRegistre.valid">Continue</button>
-
+<div class="ui centered reg grid">
+  <div class="six wide column">
+    <h1 class="ui center aligned header">Registration</h1>
+    <form class="ui form">
+      <div id="first-step">
+        <div class="field">
+          <label for="username">Username:</label>
+          <div class="ui icon input">
+            <input type="text" placeholder="Username" name="username" id="username" />
+            <i class="user icon"></i>
           </div>
-        </form>
+        </div>
 
-      <div class="ui tab" data-tab="summary">
-        Other contt
+        <div class="field">
+          <label for="password">Password:</label>
+          <div class="ui icon input">
+            <input type="password" placeholder="Password" name="password" id="password" />
+            <i class="lock icon"></i>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="conf-password">Confirm password:</label>
+          <div class="ui icon input">
+            <input type="password" placeholder="Password" name="password" id="conf-password" />
+            <i class="lock icon"></i>
+          </div>
+        </div>
+
+        <div class="center aligned">
+          <div class="ui button" id="continue">Continue</div>
+        </div>
+    </div>
+
+    <div id="second-step" class="hidden">
+      <div class="two fields">
+        <div class="required field">
+          <label>First Name</label>
+          <input placeholder="First Name" type="text">
+        </div>
+        <div class="required field">
+          <label>Last Name</label>
+          <input placeholder="Last Name" type="text">
+        </div>
       </div>
 
-  <script>
-    $('.top.menu .item').tab();
-  </script>
-</main>
+      <div class="ui calendar required field" id="bday">
+        <label>Birthday</label>
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Birthday">
+        </div>
+      </div>
+
+      <!--TODO: add api for countries and cities-->
+      <div class="two fields">
+        <div class="required field">
+          <label>Country</label>
+          <div class="ui fluid search selection country dropdown">
+            <input type="hidden" required>
+            <i class="dropdown icon"></i>
+            <input type="text" class="search">
+            <div class="default text">Select Country</div>
+          </div>
+        </div>
+
+        <!--<div class="field">
+          <label>City</label>
+          <div class="ui fluid search selection dropdown">
+            <input type="hidden" name="country">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select Country</div>
+            <div class="menu">
+            </div>
+          </div>
+        </div>-->
+      </div>
+
+      <div class="field">
+        <label>About you:</label>
+        <textarea></textarea>
+      </div>
+
+      <div class="ui button" id="back">Back</div>
+      <div class="ui button" id="reg">Register</div>
+
+    </div>
+
+  </form>
+</div>
+</div>

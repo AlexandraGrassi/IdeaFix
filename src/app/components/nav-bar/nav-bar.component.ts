@@ -25,7 +25,7 @@ export class NavBarComponent implements OnInit {
       })
     ;
 
-    $('#menu.menu .profile-tab')
+    $('#menu .menu .profile-tab')
       .on('click', function() {
         $('#menu .my-tab').removeClass('active');
       })
