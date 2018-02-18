@@ -1,29 +1,33 @@
 <app-auth-nav-bar></app-auth-nav-bar>
 
-<main>
-  <div class="ui slide masked reveal image">
-    <img src="../../../img/img3.png" class="visible content">
-    <img src="../../../img/img4.png" class="hidden content">
-  </div>
-
-  <form [formGroup]="rForm" (ngSubmit)="authorization(rForm.value)" class="ui form">
-    <div class=" ui form-container">
-      <div class="field">
-        <label>Login</label>
-        <input type="text" formControlName="login" name="username " id="username" class="ui form-control"
-               placeholder="Nickname or e-mail"/>
-        <!--<span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"></span>-->
-      </div>
-      <div class="field">
-        <label>Password</label>
-        <input type="password" formControlName="password" name="password " id="password" class="form-control"
-               placeholder="Password"/>
-        <!--<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>-->
-      </div>
-      <button class="ui black button" type="submit"  [disabled]="!rForm.valid">Submit</button>
-      <a routerLink="/registration" class="btn btn-link">Register</a>
+<div class="ui middle aligned center aligned under-menu grid">
+  <div class="four wide column">
+    <div class="ui centered small image">
+      <img class="idea" data-alt-src="../../../img/light-idea.png" src="../../../img/idea.png">
     </div>
-  </form>
-</main>
+    <br><br>
+    <form class="ui large form">
+        <div class="field">
+          <div class="ui left icon input">
+          <i class="user icon"></i>
+          <input type="text" name="email" placeholder="E-mail address">
+        </div>
+      </div>
 
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="lock icon"></i>
+          <input type="password" name="password" placeholder="Password">
+        </div>
+      </div>
 
+      <div class="ui fluid large olive submit button">Login</div>
+
+      <div class="ui error message"></div>
+    </form>
+
+    <div class="ui message">
+      New to us? <a routerLink="/registration">Sign Up</a>
+    </div>
+  </div>
+</div>

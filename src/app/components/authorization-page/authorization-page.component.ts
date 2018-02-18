@@ -1,33 +1,59 @@
-import { Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
-
-
+import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
-  moduleId: module.id,
   selector: 'app-authorization-page',
-  templateUrl: 'authorization-page.component.html',
-  styleUrls: ['authorization-page.component.css']
-
+  templateUrl: './authorization-page.component.html',
+  styleUrls: ['./authorization-page.component.css']
 })
+export class AuthorizationPageComponent implements OnInit {
 
-export class AuthorizationPageComponent {
-  rForm: FormGroup;
-  post: any;
-  login = '';
-  password = '';
+  constructor() { }
 
-  constructor(private fb: FormBuilder, private router: Router ) {
-    this.rForm = fb.group({
-      'login': [null, Validators.required],
-      'password': [null, Validators.required]
+  ngOnInit() {
+    const sourceSwap = function () {
+      const $this = $(this);
+      const newSource = $this.data('alt-src');
+      $this.data('alt-src', $this.attr('src'));
+      $this.attr('src', newSource);
+    };
+
+    $(function () {
+      $('div img.idea').hover(sourceSwap, sourceSwap);
     });
-  }
-  authorization(post) {
-    this.login = post.login;
-    this.password = post.password;
 
-    this.router.navigate(['/feed']);
+    $('.ui.form')
+      .form({
+        fields: {
+          email: {
+            identifier  : 'email',
+            rules: [
+              {
+                type   : 'empty',
+                prompt : 'Please enter your e-mail'
+              },
+              {
+                type   : 'email',
+                prompt : 'Please enter a valid e-mail'
+              }
+            ]
+          },
+          password: {
+            identifier  : 'password',
+            rules: [
+              {
+                type   : 'empty',
+                prompt : 'Please enter your password'
+              },
+              {
+                type   : 'length[6]',
+                prompt : 'Your password must be at least 6 characters'
+              }
+            ]
+          }
+        }
+      })
+    ;
   }
+
 }

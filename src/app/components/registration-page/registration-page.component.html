@@ -1,36 +1,37 @@
 <app-auth-nav-bar></app-auth-nav-bar>
 
-<div class="ui centered reg grid">
+<div class="ui centered under-menu grid">
   <div class="six wide column">
     <h1 class="ui center aligned header">Registration</h1>
+    <br>
     <form class="ui form">
       <div id="first-step">
         <div class="field">
           <label for="username">Username:</label>
-          <div class="ui icon input">
-            <input type="text" placeholder="Username" name="username" id="username" />
+          <div class="ui left icon input">
             <i class="user icon"></i>
+            <input type="text" placeholder="Username" name="username" id="username" />
           </div>
         </div>
 
         <div class="field">
           <label for="password">Password:</label>
-          <div class="ui icon input">
-            <input type="password" placeholder="Password" name="password" id="password" />
+          <div class="ui left icon input">
             <i class="lock icon"></i>
+            <input type="password" placeholder="Password" name="password" id="password" />
           </div>
         </div>
 
         <div class="field">
           <label for="conf-password">Confirm password:</label>
-          <div class="ui icon input">
-            <input type="password" placeholder="Password" name="password" id="conf-password" />
+          <div class="ui left icon input">
             <i class="lock icon"></i>
+            <input type="password" placeholder="Password" name="password" id="conf-password" />
           </div>
         </div>
 
         <div class="center aligned">
-          <div class="ui button" id="continue">Continue</div>
+          <div class="ui inverted violet button" id="continue">Continue</div>
         </div>
     </div>
 
@@ -48,7 +49,7 @@
 
       <div class="ui calendar required field" id="bday">
         <label>Birthday</label>
-        <div class="ui input right icon">
+        <div class="ui input left icon">
           <i class="calendar icon"></i>
           <input type="text" placeholder="Birthday">
         </div>
@@ -320,8 +321,8 @@
         <textarea></textarea>
       </div>
 
-      <div class="ui button" id="back">Back</div>
-      <div class="ui button" id="reg">Register</div>
+      <div class="ui inverted violet button" id="back">Back</div>
+      <div class="ui olive button" id="reg">Register</div>
     </div>
     </form>
   </div>

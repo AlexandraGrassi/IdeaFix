@@ -4,6 +4,14 @@
   margin-top: 7em;
 }
 
+.hidden {
+  display: none;
+}
+
+.under-menu {
+  margin-top: 4em !important;
+}
+
 .cards {
   margin-top: 2em !important;
 }
