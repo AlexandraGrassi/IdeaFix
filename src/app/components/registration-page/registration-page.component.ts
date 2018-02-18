@@ -29,10 +29,7 @@ export class RegistrationPageComponent implements OnInit {
 
     $('#second-step .country')
       .dropdown({
-        direction: 'downward',
-        apiSettings: {
-          url: '',
-        }
+        direction: 'downward'
       });
 
   }
