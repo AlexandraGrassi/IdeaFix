@@ -19,3 +19,8 @@
 .item{
   margin-right: 1em;
 }
+
+.avatar-photo {
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+}
