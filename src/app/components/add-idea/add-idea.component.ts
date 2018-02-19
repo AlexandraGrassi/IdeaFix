@@ -41,7 +41,7 @@ export class AddIdeaComponent implements OnInit {
               $('<img />', {
                 'src': e.target.result,
                 'height': '100',
-                'class': 'item',
+                'class': 'item-upload',
                 'title': fn + ' and size' + fs + ' bytes and type ' + ft,
                 'alt': fn + 'and size' + fs + ' bytes and type' + ft
               }).appendTo(itemPreview);
