@@ -24,7 +24,7 @@ export class RegistrationPageComponent implements OnInit {
       $('#first-step').removeClass('hidden');
     });
 
-    $('#upload').on('change', function () {
+    $('#uploadAvatar').on('change', function () {
       const item = $(this)[0].files;
       const itemCount = $(this)[0].files.length;
       const itemPath = $(this)[0].value;
