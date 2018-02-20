@@ -13,7 +13,7 @@
             <input formControlName="username" type="text" placeholder="Username" id="username" />
           </div>
 
-          <div *ngIf="!regForm.controls['username'].valid && (regForm.controls['username'].touched || regForm.controls['username'].dirty)">
+          <div *ngIf="regForm.controls['username'].dirty">
             <div class="ui pointing red basic label"
                   *ngIf="regForm.controls['username'].hasError('required')">
               Username is required.
@@ -40,7 +40,7 @@
             <input formControlName="mail" type="email" placeholder="E-mail" id="mail" />
           </div>
 
-          <div *ngIf="!regForm.controls['mail'].valid && (regForm.controls['mail'].dirty)">
+          <div *ngIf="regForm.controls['mail'].dirty">
             <div class="ui pointing red basic label"
                  *ngIf="regForm.controls['mail'].hasError('required')">
               E-mail is required.
@@ -59,7 +59,7 @@
             <input formControlName="password" type="password" placeholder="Password" id="password" />
           </div>
 
-          <div *ngIf="!regForm.controls['password'].valid && (regForm.controls['password'].dirty)">
+          <div *ngIf="regForm.controls['password'].dirty">
             <div class="ui pointing red basic label"
                  *ngIf="regForm.controls['password'].hasError('required')">
               Password is required.
@@ -102,11 +102,9 @@
         <div class="field">
           <label>Age</label>
           <input formControlName="age" placeholder="Age" type="text">
-          <div *ngIf="!regForm.controls['age'].valid && (regForm.controls['age'].dirty)">
-            <div class="ui pointing red basic label"
-                 *ngIf="regForm.controls['age'].hasError('pattern')">
-              Enter correct age.
-            </div>
+          <div class="ui pointing red basic label"
+               *ngIf="regForm.controls['age'].hasError('pattern') && regForm.controls['age'].dirty">
+            Enter correct age.
           </div>
         </div>
       </div>
@@ -124,11 +122,9 @@
         <div class="required field">
           <label>Country</label>
           <input formControlName="country" type="text" placeholder="Country" name="country" id="country" />
-          <div *ngIf="!regForm.controls['country'].valid && (regForm.controls['country'].dirty)">
-            <div class="ui pointing red basic label"
-                 *ngIf="regForm.controls['country'].hasError('required')">
-              Country is required.
-            </div>
+          <div class="ui pointing red basic label"
+               *ngIf="regForm.controls['country'].hasError('required') && regForm.controls['country'].dirty">
+            Country is required.
           </div>
         </div>
 

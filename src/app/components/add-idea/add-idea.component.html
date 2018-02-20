@@ -6,22 +6,40 @@
   <div class="content">
     <form class="ui form" [formGroup]="rForm" (ngSubmit)="postIdea(rForm.value)">
       <div class="field">
-        <label>Idea Title
-          <div class="alert ui red message"
-               *ngIf="!rForm.controls['title'].valid && rForm.controls['title'].touched">
-            <p>Required field. Enter from 10 to 30 symbols</p>
-          </div>
-        </label>
+        <label>Idea Title</label>
         <input formControlName="title" type="text" name="title" placeholder="Title">
+        <div *ngIf="rForm.controls['title'].dirty">
+          <div class="ui pointing red basic label"
+               *ngIf="rForm.controls['title'].hasError('required')">
+            Title is required.
+          </div>
+          <div class="ui pointing red basic label"
+               *ngIf="rForm.controls['title'].hasError('minlength')">
+            Must be a minimum of 10 characters.
+          </div>
+          <div class="ui pointing red basic label"
+               *ngIf="rForm.controls['title'].hasError('maxlength')">
+            Must be a maximum 30 characters
+          </div>
+        </div>
       </div>
       <div class="field">
-        <label>Text
-          <div class="alert ui red message"
-               *ngIf="!rForm.controls['bigDescription'].valid && rForm.controls['bigDescription'].touched">
-            <p>Required field. Enter from 25 to 500 symbols</p>
-          </div>
-        </label>
+        <label>Text</label>
         <textarea formControlName="bigDescription"></textarea>
+        <div *ngIf="rForm.controls['bigDescription'].dirty">
+          <div class="ui pointing red basic label"
+               *ngIf="rForm.controls['bigDescription'].hasError('required')">
+            Description is required.
+          </div>
+          <div class="ui pointing red basic label"
+               *ngIf="rForm.controls['bigDescription'].hasError('minlength')">
+            Must be a minimum of 25 characters.
+          </div>
+          <div class="ui pointing red basic label"
+               *ngIf="rForm.controls['bigDescription'].hasError('maxlength')">
+            Must be a maximum 500 characters
+          </div>
+        </div>
       </div>
 
       <div class="field remote">

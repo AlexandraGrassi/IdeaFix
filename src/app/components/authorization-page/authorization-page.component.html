@@ -13,7 +13,7 @@
           <input formControlName="mail" [(ngModel)]="phone" type="text" name="email" placeholder="E-mail address">
         </div>
 
-        <div *ngIf="!authForm.controls['mail'].valid && (authForm.controls['mail'].dirty)">
+        <div *ngIf="authForm.controls['mail'].dirty">
           <div class="ui pointing red basic label"
                *ngIf="authForm.controls['mail'].hasError('required')">
             E-mail is required.
@@ -30,12 +30,12 @@
           <i class="lock icon"></i>
           <input formControlName="password" [(ngModel)]="pass" type="password" name="password" placeholder="Password">
         </div>
-        <div *ngIf="!authForm.controls['password'].valid && (authForm.controls['password'].dirty)">
-          <div class="ui pointing red basic label"
-               *ngIf="authForm.controls['password'].hasError('required')">
-            Password is required.
-          </div>
+
+        <div class="ui pointing red basic label"
+             *ngIf="authForm.controls['password'].hasError('required') && authForm.controls['password'].dirty">
+          Password is required.
         </div>
+
       </div>
 
       <button class="ui fluid large olive submit button"
