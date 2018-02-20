@@ -1,2 +1,47 @@
-<div class="max-under-menu">
+<div class="ui centered grid under-menu">
+  <div class="four wide column">
+    <div class="ui fluid author card">
+      <div class="content">
+        <div class="header">Name</div>
+      </div>
+
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <div class="ui inverted button" routerLink="/profile">Follow</div>
+            </div>
+          </div>
+        </div>
+        <img class="ui fluid image" src="https://png.icons8.com/color/1600/avatar.png">
+      </div>
+
+      <div class="content">
+         <div class="center aligned header">Idea title</div>
+         <div class="center aligned meta">Published: today</div>
+         <div class="ui center aligned tags">
+            <!--TODO: tags with different colors-->
+            <button class="ui little violet tag-btn button" *ngFor = "let i of [0,1,2,3,4]">
+              #tag
+            </button>
+         </div>
+       </div>
+
+     <!-- <div class="extra content">
+        &lt;!&ndash;TODO: complain about an idea&ndash;&gt;
+      </div>-->
+    </div>
+  </div>
+
+  <div class="ten wide column">
+    <div>
+      <h1 >Idea title</h1> <!--align="center"-->
+      <div class="ui piled segment">
+        <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>
+        <p>Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in.</p>
+        <p>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.</p>
+      </div>
+    </div>
+
+  </div>
 </div>
