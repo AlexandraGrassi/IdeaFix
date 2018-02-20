@@ -6,24 +6,45 @@
       <img class="idea" data-alt-src="../../../img/light-idea.png" src="../../../img/idea.png">
     </div>
     <br><br>
-    <div class="ui form">
-        <div class="field">
-          <div class="ui left icon input">
+    <form class="ui form" [formGroup]="authForm" novalidate>
+      <div class="field">
+        <div class="ui left icon input">
           <i class="user icon"></i>
-          <input [(ngModel)]="phone" type="text" name="email" placeholder="E-mail address">
+          <input formControlName="mail" [(ngModel)]="phone" type="text" name="email" placeholder="E-mail address">
+        </div>
+
+        <div *ngIf="!authForm.controls['mail'].valid && (authForm.controls['mail'].dirty)">
+          <div class="ui pointing red basic label"
+               *ngIf="authForm.controls['mail'].hasError('required')">
+            E-mail is required.
+          </div>
+          <div class="ui pointing red basic label"
+               *ngIf="authForm.controls['mail'].hasError('pattern')">
+            Enter correct E-mail.
+          </div>
         </div>
       </div>
 
       <div class="field">
         <div class="ui left icon input">
           <i class="lock icon"></i>
-          <input [(ngModel)]="pass" type="password" name="password" placeholder="Password">
+          <input formControlName="password" [(ngModel)]="pass" type="password" name="password" placeholder="Password">
+        </div>
+        <div *ngIf="!authForm.controls['password'].valid && (authForm.controls['password'].dirty)">
+          <div class="ui pointing red basic label"
+               *ngIf="authForm.controls['password'].hasError('required')">
+            Password is required.
+          </div>
         </div>
       </div>
 
-      <div class="ui fluid large olive submit button" (click)="loginUser()">Login</div>
-      <div class="ui error message"></div>
-    </div>
+      <button class="ui fluid large olive submit button"
+              (click)="loginUser()"
+              [disabled] = "!authForm.valid">
+        Login
+      </button>
+
+    </form>
 
     <div class="ui message">
       New to us? <a routerLink="/registration">Sign Up</a>

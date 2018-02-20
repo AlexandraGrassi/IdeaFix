@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 declare var $: any;
 
 @Component({
@@ -15,11 +16,26 @@ export class AuthorizationPageComponent implements OnInit {
   isLoading: boolean = false;
   errMsg: string;
 
+  authForm: FormGroup;
+  constructor(private fb: FormBuilder, private service: AuthService) {}
 
-  constructor(private service: AuthService) {
+  public buildForm() {
+    this.authForm = this.fb.group({
+      mail: ['', [
+        Validators.required,
+        Validators.pattern(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)
+        ]
+      ],
+      password: ['', [
+        Validators.required
+        ]
+      ]
+    });
   }
 
   ngOnInit() {
+    this.buildForm();
+
     const sourceSwap = function () {
       const $this = $(this);
       const newSource = $this.data('alt-src');

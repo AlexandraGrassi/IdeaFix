@@ -33,10 +33,11 @@ export class RegistrationPageComponent implements OnInit {
         Validators.pattern(/^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,100}$/)
         ]
       ],
-      /*country: ['', [
+      country: ['', [
         Validators.required
         ]
-      ],*/
+      ],
+      age: ['', Validators.pattern(/^[0-9]{0,3}$/)]
     });
   }
 
@@ -52,9 +53,6 @@ export class RegistrationPageComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
-
-    /*$('#first-step #continue').on('click', this.continueReg());
-    $('#second-step #back').on('click', this.backToReg());*/
 
     $('#uploadAvatar').on('change', function () {
       const item = $(this)[0].files;
