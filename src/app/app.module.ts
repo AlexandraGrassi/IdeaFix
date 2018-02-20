@@ -19,8 +19,8 @@ import { FollowUserComponent } from './components/follow-user/follow-user.compon
 import { AuthNavBarComponent } from './components/auth-nav-bar/auth-nav-bar.component';
 import { AddIdeaComponent } from './components/add-idea/add-idea.component';
 import { AuthService } from './services/auth.service';
-import { CloudinaryModule } from '@cloudinary/angular';
-import * as Cloudinary from 'cloudinary-core';
+/*import { CloudinaryModule } from '@cloudinary/angular';
+import * as Cloudinary from 'cloudinary-core';*/
 import {IdeaService} from "./services/idea.service";
 
 
@@ -48,7 +48,7 @@ import {IdeaService} from "./services/idea.service";
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    CloudinaryModule.forRoot(Cloudinary, {cloud_name: 'ekdi'}),
+    /*CloudinaryModule.forRoot(Cloudinary, {cloud_name: 'ekdi'}),*/
   ],
   providers: [AuthService, IdeaService],
   bootstrap: [AppComponent]

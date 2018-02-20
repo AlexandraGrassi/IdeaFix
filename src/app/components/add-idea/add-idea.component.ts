@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Cloudinary} from "@cloudinary/angular";
+//import {Cloudinary} from "@cloudinary/angular";
 import {Idea} from "../../models/idea.model";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";

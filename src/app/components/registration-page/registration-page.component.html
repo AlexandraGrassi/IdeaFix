@@ -4,20 +4,51 @@
   <div class="six wide column">
     <h1 class="ui center aligned header">Registration</h1>
     <br>
-    <form class="ui form">
+    <form class="ui form" [formGroup]="regForm" novalidate>
       <div id="first-step">
         <div class="field">
           <label for="username">Username:</label>
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" placeholder="Username" name="username" id="username" />
+            <input formControlName="username" type="text" placeholder="Username" id="username" />
+          </div>
+
+          <div *ngIf="!regForm.controls['username'].valid && (regForm.controls['username'].touched || regForm.controls['username'].dirty)">
+            <div class="ui pointing red basic label"
+                  *ngIf="regForm.controls['username'].hasError('required')">
+              Username is required.
+            </div>
+            <div class="ui pointing red basic label"
+                 *ngIf="regForm.controls['username'].hasError('pattern')">
+              Enter correct username.
+            </div>
+            <div class="ui pointing red basic label"
+                 *ngIf="regForm.controls['username'].hasError('minlength')">
+              Must be a minimum of 5 characters.
+            </div>
+            <div class="ui pointing red basic label"
+                 *ngIf="regForm.controls['username'].hasError('maxlength')">
+              Must be a maximum 32 characters
+            </div>
           </div>
         </div>
+
         <div class="field">
-          <label for="username">E-mail:</label>
+          <label for="mail">E-mail:</label>
           <div class="ui left icon input">
             <i class="mail icon"></i>
-            <input type="text" placeholder="E-mail" name="mail" id="mail" />
+            <input formControlName="mail" type="email" placeholder="E-mail" id="mail" />
+          </div>
+
+          <div *ngIf="!regForm.controls['mail'].valid && (regForm.controls['mail'].touched || regForm.controls['mail'].dirty)">
+            <div class="ui pointing red basic label"
+                 *ngIf="regForm.controls['mail'].hasError('required')">
+              E-mail is required.
+            </div>
+            <div class="ui pointing red basic label"
+                 *ngIf="regForm.controls['mail'].hasError('pattern')">
+              Enter correct E-mail.
+            </div>
           </div>
         </div>
 
@@ -25,19 +56,31 @@
           <label for="password">Password:</label>
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" placeholder="Password" name="password" id="password" />
+            <input formControlName="password" type="password" placeholder="Password" id="password" />
+          </div>
+
+          <div *ngIf="!regForm.controls['password'].valid && (regForm.controls['password'].touched || regForm.controls['password'].dirty)">
+            <div class="ui pointing red basic label"
+                 *ngIf="regForm.controls['password'].hasError('required')">
+              Password is required.
+            </div>
+            <div class="ui pointing red basic label"
+                 *ngIf="regForm.controls['password'].hasError('pattern')">
+              Must be a minimum of 5 characters and 1 digit.
+            </div>
           </div>
         </div>
 
         <!--TODO: add password confirmation-->
-
-        <div class="center aligned">
-          <div class="ui inverted violet button" id="continue">Continue</div>
+        <div class="center aligned"
+             *ngIf="regForm.controls['username'].valid && regForm.controls['mail'].valid && regForm.controls['password'].valid">
+          <button onclick="continueReg()" class="ui inverted violet button" id="continue">
+            Continue
+          </button>
         </div>
     </div>
 
-    <div id="second-step" class="hidden">
-
+    <div  id="second-step" class="hidden">
       <div class="ui container">
         <label for="uploadAvatar" class="ui icon button">
           <i class="add icon"></i>
@@ -50,12 +93,12 @@
       </div>
 
       <div class="two fields">
-        <div class="required field">
+        <div class="field">
           <label>Name</label>
           <input placeholder="Name" type="text">
         </div>
 
-        <div class="required field">
+        <div class="field">
           <label>Age</label>
           <input placeholder="Age" type="text">
         </div>
@@ -73,10 +116,10 @@
       <div class="two fields">
         <div class="required field">
           <label>Country</label>
-          <input type="text" placeholder="Country" name="country" id="country" />
+          <input  type="text" placeholder="Country" name="country" id="country" />
         </div>
 
-        <div class="required field">
+        <div class="field">
           <label for="city">City</label>
           <input type="text" placeholder="City" name="city" id="city" />
         </div>
@@ -88,7 +131,7 @@
       </div>
 
       <div class="ui inverted violet button" id="back">Back</div>
-      <div class="ui violet button" id="reg">Register</div>
+      <div class="ui violet button" id="reg">Sign up</div>
     </div>
     </form>
   </div>
