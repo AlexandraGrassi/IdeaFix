@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {Cloudinary} from "@cloudinary/angular";
+import {Idea} from "../../models/idea.model";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../../services/auth.service";
+import {IdeaService} from "../../services/idea.service";
+import {PostIdea} from "../../models/postIdea.model";
+
 declare var $: any;
 
 @Component({
@@ -8,7 +15,16 @@ declare var $: any;
 })
 export class AddIdeaComponent implements OnInit {
 
-  constructor() { }
+  private idea: PostIdea;
+  public rForm: FormGroup;
+  private create: any;
+
+  constructor(private fb: FormBuilder, private authService: AuthService, private ideaService: IdeaService) {
+    this.rForm = fb.group({
+      'title': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(30)])],
+      'bigDescription': [null, Validators.compose([Validators.required, Validators.minLength(25), Validators.maxLength(500)])],
+    });
+  }
 
   ngOnInit() {
     $('.field.remote .ui.dropdown')
@@ -58,4 +74,15 @@ export class AddIdeaComponent implements OnInit {
       }
     });
   }
+
+  postIdea(create) {
+    this.idea = new PostIdea(0, create.title, create.bigDescription, null, null, null);
+    this.ideaService.createIdea(this.idea).subscribe(result => {
+      console.log('IDEA CREATE SUCCESS');
+    }, error => {
+      console.log('IDEA CREATE ERROR');
+    });
+  }
+
+
 }

@@ -4,14 +4,24 @@
     Add idea
   </div>
   <div class="content">
-    <form class="ui form">
+    <form class="ui form" [formGroup]="rForm" (ngSubmit)="postIdea(rForm.value)">
       <div class="field">
-        <label>Idea Title</label>
-        <input type="text" name="title" placeholder="Title">
+        <label>Idea Title
+          <div class="alert ui red message"
+               *ngIf="!rForm.controls['title'].valid && rForm.controls['title'].touched">
+            <p>Required field. Enter from 10 to 30 symbols</p>
+          </div>
+        </label>
+        <input formControlName="title" type="text" name="title" placeholder="Title">
       </div>
       <div class="field">
-        <label>Text</label>
-        <textarea></textarea>
+        <label>Text
+          <div class="alert ui red message"
+               *ngIf="!rForm.controls['bigDescription'].valid && rForm.controls['bigDescription'].touched">
+            <p>Required field. Enter from 25 to 500 symbols</p>
+          </div>
+        </label>
+        <textarea formControlName="bigDescription"></textarea>
       </div>
 
       <div class="field remote">
@@ -32,12 +42,12 @@
         <input type="file" id="upload" style="display:none" multiple="multiple">
         <div id="preview"></div>
       </div>
+      <div class="actions">
+        <input type="submit" class="button green ui" value="Post Idea" style="margin: 0 auto; display: block"
+               [disabled]="!rForm.valid">
+      </div>
     </form>
   </div>
-  <div class="actions">
-    <div class="ui positive icon button">
-      Post idea
-    </div>
-  </div>
+
 
 </div>

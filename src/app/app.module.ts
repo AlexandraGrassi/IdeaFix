@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
-/*import {HttpClientModule} from '@angular/common/http';*/
-
 import { AppComponent } from './app.component';
 import { AuthorizationPageComponent } from './components/authorization-page/authorization-page.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
@@ -12,7 +10,6 @@ import { IdeaCardComponent } from './components/idea-card/idea-card.component';
 import { IdeaPageComponent } from './components/idea-page/idea-page.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
-
 import { AppRoutingModule } from './app-routing.module';
 import { FavPageComponent } from './components/fav-page/fav-page.component';
 import { FiltersComponent } from './components/filters/filters.component';
@@ -21,7 +18,11 @@ import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.com
 import { FollowUserComponent } from './components/follow-user/follow-user.component';
 import { AuthNavBarComponent } from './components/auth-nav-bar/auth-nav-bar.component';
 import { AddIdeaComponent } from './components/add-idea/add-idea.component';
-import {AuthService} from './services/auth.service';
+import { AuthService } from './services/auth.service';
+import { CloudinaryModule } from '@cloudinary/angular';
+import * as Cloudinary from 'cloudinary-core';
+import {IdeaService} from "./services/idea.service";
+
 
 @NgModule({
   declarations: [
@@ -46,10 +47,10 @@ import {AuthService} from './services/auth.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule
-    /*HttpClientModule*/
+    ReactiveFormsModule,
+    CloudinaryModule.forRoot(Cloudinary, {cloud_name: 'ekdi'}),
   ],
-  providers: [AuthService],
+  providers: [AuthService, IdeaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

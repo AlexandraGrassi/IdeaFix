@@ -10,7 +10,6 @@ declare var $: any;
 export class NavBarComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit() {
     $('#menu .dropdown')
       .dropdown({
@@ -55,4 +54,8 @@ export class NavBarComponent implements OnInit {
     });
   }
 
+  logout() {
+    localStorage.setItem('userState', JSON.stringify({isUserLoggedIn: false, authPair: null}));
+    // localStorage.clear();
+  }
 }

@@ -6,6 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 import {Pair} from '../../Pair';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AuthService {
@@ -22,7 +23,7 @@ export class AuthService {
 
   private static http: Http;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private router: Router) {
     AuthService.http = http;
     const mySanya = localStorage.getItem('userState');
     if (mySanya) {
@@ -31,7 +32,10 @@ export class AuthService {
       // this.user = outSession.user || '';
       this.isUserLoggedIn = outSession.isUserLoggedIn || '';
       if (this.isUserLoggedIn) {
-        console.log('USER LOGGED IN');
+        console.log('User authenticated, redirecting...');
+        this.router.navigate(['feed']);
+      } else {
+        console.log('Please, log in');
       }
       /* if (this.authPair!=''){
        if (this.authPair!=null){
@@ -91,18 +95,18 @@ export class AuthService {
 
   _errorHandler(error: Response) {
     console.error(JSON.parse(JSON.stringify(error.json())));
-    var obj = JSON.parse(JSON.stringify(error.json()));
+    let obj = JSON.parse(JSON.stringify(error.json()));
     return Observable.throw(obj.message);
   }
 
   logout(): void {
+    console.log('LOGOUT');
     this.isUserLoggedIn = false;
     this.token = null;
     this.status = 0;
     this.authPair = null;
     // this.user = null;
     localStorage.setItem('userState', JSON.stringify({isUserLoggedIn: this.isUserLoggedIn, authPair: this.authPair}));
-
   }
 
   getToken(): string {
