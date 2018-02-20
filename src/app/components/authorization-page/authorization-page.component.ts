@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 declare var $: any;
 
 @Component({
@@ -8,7 +9,15 @@ declare var $: any;
 })
 export class AuthorizationPageComponent implements OnInit {
 
-  constructor() { }
+  isFail: boolean = true;
+  phone: string;
+  pass: string;
+  isLoading: boolean = false;
+  errMsg: string;
+
+
+  constructor(private service: AuthService) {
+  }
 
   ngOnInit() {
     const sourceSwap = function () {
@@ -26,28 +35,28 @@ export class AuthorizationPageComponent implements OnInit {
       .form({
         fields: {
           email: {
-            identifier  : 'email',
+            identifier: 'email',
             rules: [
               {
-                type   : 'empty',
-                prompt : 'Please enter your e-mail'
+                type: 'empty',
+                prompt: 'Please enter your e-mail'
               },
               {
-                type   : 'email',
-                prompt : 'Please enter a valid e-mail'
+                type: 'email',
+                prompt: 'Please enter a valid e-mail'
               }
             ]
           },
           password: {
-            identifier  : 'password',
+            identifier: 'password',
             rules: [
               {
-                type   : 'empty',
-                prompt : 'Please enter your password'
+                type: 'empty',
+                prompt: 'Please enter your password'
               },
               {
-                type   : 'length[6]',
-                prompt : 'Your password must be at least 6 characters'
+                type: 'length[6]',
+                prompt: 'Your password must be at least 6 characters'
               }
             ]
           }
@@ -56,4 +65,38 @@ export class AuthorizationPageComponent implements OnInit {
     ;
   }
 
+  loginUser() {
+    this.isLoading = true;
+    this.service.auth(this.phone, this.pass).subscribe( authPair => {
+      if (authPair.first == 200 && authPair.first != null) {
+        this.service.login(authPair, this.phone, this.pass).subscribe(user => {
+          this.service.signIn(authPair);
+          this.isFail = false;
+          this.isLoading = false;
+        }, responseErrorMessage => {
+          this.isLoading = false;
+          this.errMsg = responseErrorMessage;
+          this.showFailedAuthorization(); });
+      }  else {
+        this.isLoading = false;
+        this.showFailedAuthorization();
+      }
+    }, responseError => {
+      this.errMsg = responseError;
+      this.isLoading = false;
+      this.showFailedAuthorization();
+    });
+
+    //for test
+    /*this.authorizeService.setUserLoggedIn(true);
+     this.router.navigate(['orders']);*/
+  }
+
+  showFailedAuthorization() {
+    $('#authorization-fail-message').removeClass('hidden');
+  }
+
+  registration() {
+    // this.router.navigate(['registration']);
+  }
 }

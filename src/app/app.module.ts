@@ -21,6 +21,7 @@ import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.com
 import { FollowUserComponent } from './components/follow-user/follow-user.component';
 import { AuthNavBarComponent } from './components/auth-nav-bar/auth-nav-bar.component';
 import { AddIdeaComponent } from './components/add-idea/add-idea.component';
+import {AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { AddIdeaComponent } from './components/add-idea/add-idea.component';
     ReactiveFormsModule
     /*HttpClientModule*/
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
