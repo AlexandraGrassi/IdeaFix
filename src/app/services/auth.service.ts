@@ -24,7 +24,7 @@ export class AuthService {
   private static http: Http;
 
   constructor(private http: Http, private router: Router) {
-    AuthService.http = http;
+    // AuthService.http = http;
     const mySanya = localStorage.getItem('userState');
     if (mySanya) {
       const outSession = JSON.parse(mySanya);
@@ -33,7 +33,7 @@ export class AuthService {
       this.isUserLoggedIn = outSession.isUserLoggedIn || '';
       if (this.isUserLoggedIn) {
         console.log('User authenticated, redirecting...');
-        this.router.navigate(['feed']);
+        //this.router.navigate(['feed']);
       } else {
         console.log('Please, log in');
       }
@@ -47,9 +47,9 @@ export class AuthService {
     }
   };
 
-  setUserLoggedIn(status: boolean) {
-    this.isUserLoggedIn = status;
-  }
+  // setUserLoggedIn(status: boolean) {
+  //   this.isUserLoggedIn = status;
+  // }
 
   getUserLoggedIn() {
     return this.isUserLoggedIn;

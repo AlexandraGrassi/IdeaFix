@@ -23,6 +23,7 @@ export class AddIdeaComponent implements OnInit {
     this.rForm = fb.group({
       'title': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(30)])],
       'bigDescription': [null, Validators.compose([Validators.required, Validators.minLength(25), Validators.maxLength(500)])],
+      'tags': [null]
     });
   }
 
@@ -76,12 +77,13 @@ export class AddIdeaComponent implements OnInit {
   }
 
   postIdea(create) {
-    this.idea = new PostIdea(0, create.title, create.bigDescription, null, null, null);
-    this.ideaService.createIdea(this.idea).subscribe(result => {
-      console.log('IDEA CREATE SUCCESS');
-    }, error => {
-      console.log('IDEA CREATE ERROR');
-    });
+    // this.idea = new PostIdea(0, create.title, create.bigDescription, null, null, null);
+    // this.ideaService.createIdea(this.idea).subscribe(result => {
+    //   console.log('IDEA CREATE SUCCESS');
+    // }, error => {
+    //   console.log('IDEA CREATE ERROR');
+    // });
+    console.log(create.tags);
   }
 
 

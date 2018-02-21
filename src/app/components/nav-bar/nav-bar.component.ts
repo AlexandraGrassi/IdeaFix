@@ -54,8 +54,8 @@ export class NavBarComponent implements OnInit {
     });
   }
 
-  logout() {
-    localStorage.setItem('userState', JSON.stringify({isUserLoggedIn: false, authPair: null}));
-    // localStorage.clear();
-  }
+  // logout() {
+  //   localStorage.setItem('userState', JSON.stringify({isUserLoggedIn: false, authPair: null}));
+  //   // localStorage.clear();
+  // }
 }
