@@ -1,5 +1,5 @@
-<app-filters></app-filters>
-
+<app-filters *ngIf="isCorrectStatus()"></app-filters>
+<div *ngIf="!isCorrectStatus()" class="max-under-menu"></div>
 <!--две карточки в ряд-->
 <div class="ui stackable six column centered grid cards">
   <div class="six wide column" *ngFor = "let i of [0,1,2,3,4]">

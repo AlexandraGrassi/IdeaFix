@@ -4,6 +4,13 @@
       <img class="idea" data-alt-src="../../../img/light-idea.png" src="../../../img/idea.png">
     </div>
     <br><br>
+
+    <div class="ui negative message transition hidden" id="authorization-fail-message">
+      <i class="ui close icon"></i>
+      <div class="header">Authorization has failed</div>
+      <p>Check your E-mail or password</p>
+    </div>
+
     <form class="ui form" [formGroup]="authForm" novalidate>
       <div class="field">
         <div class="ui left icon input">

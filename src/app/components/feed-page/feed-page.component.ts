@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-feed-page',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
+
+  public isCorrectStatus(): boolean {
+    return this.authService.getUserLoggedIn();
+  }
 
   ngOnInit() {
   }

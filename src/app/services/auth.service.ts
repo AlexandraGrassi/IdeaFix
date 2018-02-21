@@ -88,7 +88,7 @@ export class AuthService {
         response.json()
       )
       .map(response => {
-        console.log(response);
+        /*console.log(response);*/
         return response;
       }).catch(this._errorHandler);
   }
@@ -107,6 +107,8 @@ export class AuthService {
     this.authPair = null;
     // this.user = null;
     localStorage.setItem('userState', JSON.stringify({isUserLoggedIn: this.isUserLoggedIn, authPair: this.authPair}));
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 
   getToken(): string {

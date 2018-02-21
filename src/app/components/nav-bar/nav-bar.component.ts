@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
+
+;
 
 declare var $: any;
 
@@ -9,7 +13,13 @@ declare var $: any;
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private authService: AuthService) { }
+
+  logOut(){
+    console.log("Logged out");
+    this.authService.logout();
+  }
+
   ngOnInit() {
     $('#menu .dropdown')
       .dropdown({
@@ -54,8 +64,4 @@ export class NavBarComponent implements OnInit {
     });
   }
 
-  // logout() {
-  //   localStorage.setItem('userState', JSON.stringify({isUserLoggedIn: false, authPair: null}));
-  //   // localStorage.clear();
-  // }
 }

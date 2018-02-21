@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from "@angular/router";
 declare var $: any;
 
 @Component({
@@ -17,7 +18,7 @@ export class AuthorizationPageComponent implements OnInit {
   errMsg: string;
 
   authForm: FormGroup;
-  constructor(private fb: FormBuilder, private service: AuthService) {}
+  constructor(private router: Router, private fb: FormBuilder, private service: AuthService) {}
 
   public buildForm() {
     this.authForm = this.fb.group({
@@ -57,6 +58,7 @@ export class AuthorizationPageComponent implements OnInit {
           this.service.signIn(authPair);
           this.isFail = false;
           this.isLoading = false;
+          this.router.navigate(['feed']);
         }, responseErrorMessage => {
           this.isLoading = false;
           this.errMsg = responseErrorMessage;
@@ -71,16 +73,10 @@ export class AuthorizationPageComponent implements OnInit {
       this.showFailedAuthorization();
     });
 
-    //for test
-    /*this.authorizeService.setUserLoggedIn(true);
-     this.router.navigate(['orders']);*/
   }
 
   showFailedAuthorization() {
     $('#authorization-fail-message').removeClass('hidden');
   }
 
-  registration() {
-    // this.router.navigate(['registration']);
-  }
 }

@@ -2,7 +2,7 @@
   <div class="computer only row">
     <div class="ui top fixed small borderless menu" id="menu">
       <div class="header item">
-        <a routerLink="/auth" class="main-name"><h2>Idea Fix.</h2></a>
+        <a routerLink="/feed" class="main-name"><h2>Idea Fix.</h2></a>
       </div>
 
       <a class="active item my-tab" routerLink="/feed">
@@ -85,7 +85,10 @@
       <a routerLink="/profile" class="item">My profile</a>
 
       <a class="profile item">Edit profile</a>
-      <a class="profile item">Log out</a>
+      <a class="profile item" *ngIf="isCorrectStatus()"
+         (click)="logOut()">
+        Log out
+      </a>
     </div>
   </div>
 

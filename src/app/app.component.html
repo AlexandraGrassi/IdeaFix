@@ -1,9 +1,9 @@
- <app-nav-bar
-    *ngIf="isCorrectStatus() && (router.url === '/idea' || router.url === '/profile' || router.url === '/fav' || router.url === '/feed')">
-  </app-nav-bar>
+<app-nav-bar
+  *ngIf="isCorrectStatus() && (router.url === '/idea' || router.url === '/profile' || router.url === '/fav' || router.url === '/feed')">
+</app-nav-bar>
 
-  <app-auth-nav-bar
-    *ngIf="isFalseStatus() && (router.url === '/feed' || router.url === '/profile' || router.url === '/auth' || router.url === '/registration' || router.url === '/idea')">
-  </app-auth-nav-bar>
+<app-auth-nav-bar
+  *ngIf="isFalseStatus() && (router.url === '/feed' || router.url === '/profile' || router.url === '/auth' || router.url === '/registration' || router.url === '/idea')">
+</app-auth-nav-bar>
 
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>

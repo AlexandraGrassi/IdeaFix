@@ -18,9 +18,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  isCorrectStatus(): boolean {
-
-    console.log(this.authService.getUserLoggedIn());
+  public isCorrectStatus(): boolean {
     return this.authService.getUserLoggedIn();
   }
 

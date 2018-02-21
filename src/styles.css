@@ -1,15 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 .max-under-menu {
-  margin-top: 7em;
-}
-
-.hidden {
-  display: none;
+  margin-top: 7em !important;
 }
 
 .under-menu {
   margin-top: 3em !important;
+}
+
+.hidden {
+  display: none;
 }
 
 .cards {
