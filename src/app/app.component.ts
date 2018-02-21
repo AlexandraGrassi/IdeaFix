@@ -9,7 +9,6 @@ import {AuthService} from "./services/auth.service";
 })
 
 export class AppComponent implements OnInit {
-  title = 'app works!';
   constructor(private router: Router, private authService: AuthService){}
 
   ngOnInit() {

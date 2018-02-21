@@ -20,6 +20,10 @@ export class NavBarComponent implements OnInit {
     this.authService.logout();
   }
 
+  public isCorrectStatus(): boolean {
+    return this.authService.getUserLoggedIn();
+  }
+
   ngOnInit() {
     $('#menu .dropdown')
       .dropdown({

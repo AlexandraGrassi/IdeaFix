@@ -47,7 +47,8 @@
               Edit profile
             </a>
             <div class="divider"></div>
-            <a class="item">
+            <a class="item" *ngIf="isCorrectStatus()"
+               (click)="logOut()">
               Log out
             </a>
           </div>
