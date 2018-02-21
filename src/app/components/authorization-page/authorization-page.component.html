@@ -1,4 +1,4 @@
-<div class="ui middle aligned center aligned under-menu grid">
+<div class="ui middle aligned center aligned under-menu grid" *ngIf="!isCorrectStatus()">
   <div class="four wide column">
     <div class="ui centered small image">
       <img class="idea" data-alt-src="../../../img/light-idea.png" src="../../../img/idea.png">
@@ -53,6 +53,15 @@
 
     <div class="ui message">
       New to us? <a routerLink="/registration">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+<div class="ui middle aligned center aligned grid max-under-menu" *ngIf="isCorrectStatus()">
+  <div class="five wide column">
+    <div class="ui negative message transition">
+      <div class="header">Ooooops!</div>
+      <p>You're already in system.</p>
     </div>
   </div>
 </div>

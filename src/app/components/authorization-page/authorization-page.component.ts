@@ -20,6 +20,10 @@ export class AuthorizationPageComponent implements OnInit {
   authForm: FormGroup;
   constructor(private router: Router, private fb: FormBuilder, private service: AuthService) {}
 
+  public isCorrectStatus(): boolean {
+    return this.service.getUserLoggedIn();
+  }
+
   public buildForm() {
     this.authForm = this.fb.group({
       mail: ['', [

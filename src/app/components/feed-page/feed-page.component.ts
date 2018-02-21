@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 
-
 @Component({
   selector: 'app-feed-page',
   templateUrl: './feed-page.component.html',
@@ -11,7 +10,7 @@ export class FeedPageComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
-  public isCorrectStatus(): boolean {
+  isCorrectStatus(): boolean {
     return this.authService.getUserLoggedIn();
   }
 
