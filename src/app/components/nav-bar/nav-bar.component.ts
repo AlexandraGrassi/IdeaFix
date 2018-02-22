@@ -14,6 +14,7 @@ declare var $: any;
 export class NavBarComponent implements OnInit {
 
   constructor(private router: Router, private authService: AuthService) { }
+  user;
 
   logOut(){
     console.log("Logged out");
