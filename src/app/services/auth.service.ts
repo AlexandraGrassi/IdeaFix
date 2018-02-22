@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 import {Pair} from '../../Pair';
 import {Router} from "@angular/router";
+import {User} from "../models/user.model";
 
 @Injectable()
 export class AuthService {
@@ -62,6 +63,17 @@ export class AuthService {
   /*getUserType() {
     return this.user.role;
   }*/
+
+  signUp(user: User) {
+    return this.http.post(`${this.regUrl}`, user)
+      .map(response =>
+        response.json()
+      )
+      .map(response => {
+        console.log(response);
+        return response;
+      }).catch(this._errorHandler);
+  }
 
   signIn(authPair: Pair) {
     // this.user = user;
