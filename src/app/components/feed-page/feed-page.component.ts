@@ -12,7 +12,7 @@ import {PaginationInstance} from "ngx-pagination";
 })
 export class FeedPageComponent implements OnInit {
 
-  ideas;
+  ideas = [];
   isLoad: boolean = true;
 
   constructor(private authService: AuthService, private ideaService: IdeaService) { }

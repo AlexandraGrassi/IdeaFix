@@ -2,8 +2,8 @@
 <div *ngIf="!isCorrectStatus()" class="max-under-menu"></div>
 
 <div class="ui stackable six column centered grid cards">
-  <div class="six wide column" *ngFor = "let idea of ideas; let i = index">
-    <app-idea-card [idea]="idea[i]">
+  <div class="six wide column" *ngFor = "let idea of ideas">
+    <app-idea-card [idea]="idea">
     </app-idea-card>
   </div>
 

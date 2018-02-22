@@ -26,7 +26,7 @@ export class IdeaService {
 
   public getIdeasList() {
     return this.http.get(`${this.ideaUrl}`, this.options)
-      .map(response => Array.of( response.json().data ))
+      .map(response => response.json().data )
   }
 
 
