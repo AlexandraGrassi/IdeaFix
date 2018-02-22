@@ -1,7 +1,7 @@
 <div class="ui fluid link card">
     <div class="content" routerLink="/idea">
       <div class="header">
-        <img class="ui avatar image" src="https://png.icons8.com/color/1600/avatar.png">Name
+        <img class="ui avatar image" src="https://png.icons8.com/color/1600/avatar.png">{{idea.author.nickname}}
         <div class="right floated meta">
           <span class="idea-attachments"><i class="attach icon"></i>2</span>
         </div>
@@ -9,15 +9,15 @@
     </div>
 
     <div class="content idea-content" routerLink="/idea">
-      <div class="center aligned header">Idea title</div>
+      <div class="center aligned header">{{idea.title}}</div>
       <div class="description">
-          Оценке качества восприятия макета используется. Интернет-страницы и слова, получив текст-рыбу, широко используемый. Каждый веб-разработчик знает, что такое текст-рыба возникают некоторые вопросы. То и проектах, ориентированных на латыни и на интернет-страницы и проектах ориентированных. Совсем необязательно буквы встречаются с разной частотой.
+         {{idea.bigDescription}}
       </div>
 
       <div class="ui center aligned tags">
         <!--TODO: tags with different colors-->
-        <button class="ui violet tag-btn button " *ngFor = "let i of [0,1,2,3,4]">
-          #tag
+        <button class="ui violet tag-btn button " *ngFor = "let tag of idea.setOfTags; let i = index">
+          {{ tag[1] }}
         </button>
       </div>
     </div>

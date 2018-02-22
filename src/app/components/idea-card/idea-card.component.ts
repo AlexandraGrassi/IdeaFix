@@ -1,5 +1,7 @@
 ///<reference path="../../../../node_modules/protractor/built/element.d.ts"/>
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Idea} from '../../models/idea.model';
+import {IdeaService} from '../../services/idea.service';
 
 @Component({
   selector: 'app-idea-card',
@@ -9,8 +11,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class IdeaCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() idea: Idea;
+  isLoading: boolean = true;
+
+  constructor(private ideaService: IdeaService) { }
 
   ngOnInit() {
+    console.log('Это идея: ' + this.idea);
+    console.log(this.idea);
+    console.log(this.idea.setOfTags);
   }
 }

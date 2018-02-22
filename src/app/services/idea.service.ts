@@ -24,6 +24,14 @@ export class IdeaService {
       .catch(this._errorHandler);
   }
 
+  public getIdeasList() {
+    return this.http.get(`${this.ideaUrl}`, this.options)
+      .map(response => Array.of( response.json().data ))
+  }
+
+
+  /*Object.values(response.json())
+*/
   _errorHandler(error: Response) {
     console.error(JSON.parse(JSON.stringify(error.json())));
     var obj = JSON.parse(JSON.stringify(error.json()));
