@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {User} from "../../models/user.model";
+import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
 
 declare var $: any;
 
@@ -12,7 +15,10 @@ declare var $: any;
 export class RegistrationPageComponent implements OnInit {
 
   regForm: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  isFail: boolean = true;
+  isLoading: boolean = false;
+  errMsg: string;
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
 
   public buildForm() {
     this.regForm = this.fb.group({
@@ -37,16 +43,21 @@ export class RegistrationPageComponent implements OnInit {
         Validators.required
         ]
       ],
-      age: ['', Validators.pattern(/^[0-9]{0,3}$/)]
+      age: ['', Validators.pattern(/^[0-9]{0,3}$/)],
+      city: [],
+      about: [],
+      name: []
     });
   }
 
   public continueReg() {
     $('#first-step').addClass('hidden');
+    $('#continue').addClass('hidden');
     $('#second-step').removeClass('hidden');
   }
 
   public backToReg(){
+    $('#continue').removeClass('hidden');
     $('#second-step').addClass('hidden');
     $('#first-step').removeClass('hidden');
   }
@@ -84,5 +95,22 @@ export class RegistrationPageComponent implements OnInit {
         itemPreview.html('Wrong file format');
       }
     });
+  }
+
+  register(create) {
+    let user = new User(null, create.name, create.username, null, false, create.password,
+                        create.age, create.mail, create.city, create.country, create.about, null, null);
+    this.authService.signUp(user).subscribe(response =>{
+      this.isFail = false;
+      this.isLoading = false;
+      this.router.navigate(['auth'])
+    }, responseErrorMessage => {
+      this.isLoading = false;
+      this.errMsg = responseErrorMessage;
+      this.showFailedRegistrationation(); });
+  }
+
+  showFailedRegistrationation() {
+    $('#authorization-fail-message').removeClass('hidden');
   }
 }

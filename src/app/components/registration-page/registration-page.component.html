@@ -2,7 +2,7 @@
   <div class="six wide column">
     <h1 class="ui center aligned header">Registration</h1>
     <br>
-    <form class="ui form" [formGroup]="regForm" novalidate>
+    <form class="ui form" [formGroup]="regForm" (submit)="register(regForm.value)" novalidate>
       <div id="first-step">
         <div class="field">
           <label for="username">Username:</label>
@@ -71,11 +71,9 @@
 
         <!--TODO: add password confirmation-->
         <div class="center aligned">
-          <button (click)="continueReg()"
+          <input (click)="continueReg()"
                   [disabled] = "!regForm.controls['username'].valid && !regForm.controls['mail'].valid && !regForm.controls['password'].valid"
-                  class="ui inverted violet button" id="continue">
-            Continue
-          </button>
+                  class="ui inverted violet button" id="continue" value="Continue">
         </div>
     </div>
 
@@ -94,7 +92,7 @@
       <div class="two fields">
         <div class="field">
           <label>Name</label>
-          <input placeholder="Name" type="text">
+          <input formControlName="name" placeholder="Name" type="text">
         </div>
 
         <div class="field">
@@ -128,23 +126,25 @@
 
         <div class="field">
           <label for="city">City</label>
-          <input type="text" placeholder="City" name="city" id="city" />
+          <input formControlName="city" type="text" placeholder="City" name="city" id="city" />
         </div>
       </div>
 
       <div class="field">
         <label>About you:</label>
-        <textarea></textarea>
+        <textarea formControlName="about"></textarea>
       </div>
 
-      <button (click)="backToReg()"
+      <div class="ui negative message transition hidden" id="authorization-fail-message">
+        <i class="ui close icon"></i>
+        <div class="header">Registration has failed</div>
+        <p>Check all fields again</p>
+      </div>
+
+      <input value="Back" (click)="backToReg()"
               class="ui inverted violet button">
-        Back
-      </button>
-      <button class="ui violet button"
+      <input type="submit" value="Sign Up" class="ui violet button"
               [disabled] = "!regForm.valid">
-        Sign up
-      </button>
     </div>
     </form>
   </div>
