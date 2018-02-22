@@ -6,11 +6,11 @@ export class PostIdea {
   title: string;
   bigDescription: string;
   authorId: number;
-  setOfTags: Set<Tag>;
-  listOfMedia: Array<Media>;
+  setOfTags: any;
+  listOfMedia: any;
 
 
-  constructor(id: number, title: string, bigDescription: string, authorId: number, setOfTags: Set<Tag>, listOfMedia: Array<Media>) {
+  constructor(id: number, title: string, bigDescription: string, authorId: number, setOfTags: any, listOfMedia: any) {
     this.id = id;
     this.title = title;
     this.bigDescription = bigDescription;

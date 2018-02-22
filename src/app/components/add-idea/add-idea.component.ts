@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
 import {IdeaService} from "../../services/idea.service";
 import {PostIdea} from "../../models/postIdea.model";
+import {Tag} from "../../models/tag.model";
 
 declare var $: any;
 
@@ -77,14 +78,18 @@ export class AddIdeaComponent implements OnInit {
   }
 
   postIdea(create) {
-    // this.idea = new PostIdea(0, create.title, create.bigDescription, null, null, null);
-    // this.ideaService.createIdea(this.idea).subscribe(result => {
-    //   console.log('IDEA CREATE SUCCESS');
-    // }, error => {
-    //   console.log('IDEA CREATE ERROR');
-    // });
-    console.log(create.tags);
+    let arrTags = create.tags.split(' ');
+    // console.log(arrTags);
+    let transfer = [];
+    for (let i = 0; i < arrTags.length; i++) {
+      transfer[i] = {"name": arrTags[i]};
+    }
+    // console.log(transfer);
+    this.idea = new PostIdea(0, create.title, create.bigDescription, null, transfer, []);
+    this.ideaService.createIdea(this.idea).subscribe(result => {
+      console.log('IDEA CREATE SUCCESS');
+    }, error => {
+      console.log('IDEA CREATE ERROR');
+    });
   }
-
-
 }
